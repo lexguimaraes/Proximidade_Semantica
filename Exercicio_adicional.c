@@ -453,9 +453,7 @@ int main(int argc, char** argv){
     if (teste2!=NULL){
         for(int i = 0;i<m;i++){
             if (teste2[i]== NULL)continue;
-            imprimir_Agrupamento(teste2[i]);
             limpar_lista_char(teste2[i]);
-            puts("");
         }
         free(teste2);
     }*/
