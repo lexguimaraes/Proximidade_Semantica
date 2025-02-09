@@ -448,8 +448,8 @@ int main(int argc, char** argv){
         cont++;
     }*/
 
-    /*int m = 10;
-    char*** teste2 = m_agrupamentos(head,3,cosin,m);
+    int m = 20;
+    /*char*** teste2 = m_agrupamentos(head,3,cosin,m);
     if (teste2!=NULL){
         for(int i = 0;i<m;i++){
             if (teste2[i]== NULL)continue;
@@ -458,7 +458,18 @@ int main(int argc, char** argv){
             puts("");
         }
         free(teste2);
-    }
-    exclui_lista(head);*/
+    }*/
+    /*char buff[20];
+    while(1){
+        printf("Palavra a ser agrupada:\n ");
+        scanf(" %s",buff);
+        if(!strcmp(buff,"-1"))break;
+        char** teste1 = agrupar_palavras(head,5,buff,cosin);
+        printf("Cinco palavras mais próximas de: %s\n",buff);
+        imprimir_Agrupamento(teste1);
+        limpar_lista_char(teste1);
+    }*/
+    //exclui_lista(head);
+
     return 0;
 }
