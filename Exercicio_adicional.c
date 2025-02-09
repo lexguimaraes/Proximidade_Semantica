@@ -465,9 +465,10 @@ int main(int argc, char** argv){
         scanf(" %s",buff);
         if(!strcmp(buff,"-1"))break;
         char** teste1 = agrupar_palavras(head,5,buff,cosin);
-        printf("Cinco palavras mais próximas de: %s\n",buff);
+        printf("Cinco palavras mais próximas de: %s\n\n",buff);
         imprimir_Agrupamento(teste1);
         limpar_lista_char(teste1);
+        puts("");
     }*/
     //exclui_lista(head);
 
