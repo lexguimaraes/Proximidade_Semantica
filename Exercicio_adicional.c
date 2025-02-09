@@ -214,6 +214,7 @@ char** palavras_distancia(Node*head, double (*comparacao)(palavra*,palavra*,int)
             cont++;
         }
     }
+    if(cont == 1)return NULL;
     palavras = malloc(sizeof(char*)*(cont+1));//+1 para saber o finall
     cont = 0;
     for(Node* p = head;p!= NULL; p = p->next){
@@ -384,7 +385,7 @@ char*** m_agrupamentos(Node* head,int k,double (*comparacao)(palavra*,palavra*,i
     }
     for(int i = 0;i<m;i++){
         p = head;
-        for(int j = 0;j<rand()%929606;j++){//deveria %929606 para o arquivo inteiro, meu computador não processa isso, então vou deixar outros valores temporários
+        for(int j = 0;j<rand()%929606;j++){//deveria %929606 para o arquivo inteiro, outros valores para teste mais facil
             p = p->next;
             if(p == NULL)break;
         }
@@ -394,10 +395,10 @@ char*** m_agrupamentos(Node* head,int k,double (*comparacao)(palavra*,palavra*,i
                 printf("ERROR 404");
                 continue;
             }
-            /*printf("Agrupamento: %d  \nPalavra: %s\n",i+1,p->palavra->palavra);
+            printf("Agrupamento: %d  \nPalavra: %s\n",i+1,p->palavra->palavra);
             //imprimirlistaDist(head,p->palavra->palavra,comparacao);
             imprimir_Agrupamento(m_agrup[i]);
-            printf("\n");*/
+            printf("\n");
         }
     }
     return m_agrup;//FREE FORAAAAAAAAAAAAAAA!!!!!!!!!!!
@@ -427,7 +428,7 @@ int main(int argc, char** argv){
     //printf("//////////////////////\n");
     //imprimirlista(head,50);
     //imprimirlistaDist(head,"de", cosin);
-    //char** teste3 = palavras_distancia(head,dist_euclid,1.06,"alemão");
+    //char** teste3 = palavras_distancia(head,dist_euclid,1.26,"mesma");
     //imprimir_Agrupamento(teste3);
     //imprimir_Agrupamento(teste3);
     //imprimirlistaDist(head,"de",dist_euclid);
@@ -452,10 +453,12 @@ int main(int argc, char** argv){
     if (teste2!=NULL){
         for(int i = 0;i<m;i++){
             if (teste2[i]== NULL)continue;
+            imprimir_Agrupamento(teste2[i]);
             limpar_lista_char(teste2[i]);
+            puts("");
         }
         free(teste2);
-    }*/
-    //exclui_lista(head);
+    }
+    exclui_lista(head);*/
     return 0;
 }
